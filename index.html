@@ -8,41 +8,61 @@
 
   <link rel="stylesheet" href="css/site.combined.min.css">
 
-  <title>Frontend Mentor | Four card feature section</title>
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
 </head>
 <body>
 
-<div class="heading-section">
-  <h3 class="suptitle">Reliable, efficient delivery</h3>
-  <h2 class="title">Powered by Technology</h2>
-  <p class="text">
-    Our Artificial Intelligence powered tools use millions of project data points
-    to ensure that your project is successful
-  </p>
+<div class="page-wrapper">
+  <div class="page-container">
+    <img class="logo" src="images/logo.svg" alt="Base Apparel">
+
+    <div class="content-container">
+      <h2 class="heading"><span>We're</span> coming soon</h2>
+      <p class="text">
+        Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.
+      </p>
+      <form action="#" class="form">
+        <input type="email" class="form-input" placeholder="Email Address">
+        <button class="form-button"></button>
+        <p class="form-error"></p>
+      </form>
+    </div>
+
+    </div>
+  </div>
 </div>
 
-<div class="cards-container">
-  <div class="card green">
-    <p class="card-title">Supervisor</p>
-    <p class="card-text">Monitors activity to identify project roadblocks</p>
-    <img class="card-icon" src="images/icon-supervisor.svg" alt="Supervisor">
-  </div>
-  <div class="card red">
-    <p class="card-title">Team Builder</p>
-    <p class="card-text">Scans our talent network to create the optimal team for your project</p>
-    <img class="card-icon" src="images/icon-team-builder.svg" alt="Team Builder">
-  </div>
-  <div class="card yellow">
-    <p class="card-title">Karma</p>
-    <p class="card-text">Regularly evaluates our talent to ensure quality</p>
-    <img class="card-icon" src="images/icon-karma.svg" alt="Karma">
-  </div>
-  <div class="card blue">
-    <p class="card-title">Calculator</p>
-    <p class="card-text">Uses data from past projects to provide better delivery estimates</p>
-    <img class="card-icon" src="images/icon-calculator.svg" alt="Calculator">
-  </div>
-</div>
+<div class="image-container"></div>
+
+<script>
+  const $form = document.querySelector('.form');
+  const $formInput = document.querySelector('.form-input');
+  const $formButton = document.querySelector('.form-button');
+  const $formError = document.querySelector('.form-error');
+
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  $formButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    const value = $formInput.value;
+
+    $form.classList.remove('has-error');
+
+    if (!value.length) {
+      $formError.textContent = 'Oops! Please add your email';
+      $form.classList.add('has-error');
+    }
+    else if (!validateEmail(value)) {
+      $formError.textContent = 'Oops! Please check your email';
+      $form.classList.add('has-error');
+    }
+  });
+</script>
+
 
 </body>
 </html>
