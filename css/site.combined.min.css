@@ -1,3 +1,11 @@
+/**
+ * @project        frontend-mentor-challenge
+ * @author         David Maillard, <maillard.david23@gmail.com>
+ * @build          Thu, Jul 1, 2021 12:34 PM ET
+ * @release        172fceb0df9937ab349c3d223e25c3cecb7ea6dc [master]
+ * @copyright      Copyright (c) 2021, REPLACE_ME
+ *
+ */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 * {
   box-sizing: border-box; }
@@ -27,6 +35,10 @@ body {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 64px; }
+  @media (max-width: 699px) {
+    .heading-section {
+      margin-bottom: 76px;
+      max-width: 311px; } }
   .heading-section .suptitle {
     font-style: normal;
     font-weight: normal;
@@ -35,6 +47,12 @@ body {
     text-align: center;
     letter-spacing: 0.25px;
     margin: 0; }
+    @media (max-width: 699px) {
+      .heading-section .suptitle {
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 0.166667px;
+        margin-bottom: 1px; } }
   .heading-section .title {
     font-style: normal;
     font-weight: 600;
@@ -43,6 +61,13 @@ body {
     text-align: center;
     letter-spacing: 0.25px;
     margin: -3px 0 13px; }
+    @media (max-width: 699px) {
+      .heading-section .title {
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: 0.166667px;
+        margin-top: 0; } }
   .heading-section .text {
     font-style: normal;
     font-weight: normal;
@@ -53,6 +78,102 @@ body {
     mix-blend-mode: normal;
     opacity: 0.5;
     margin: 0; }
+
+.cards-container {
+  width: 100%;
+  max-width: 1110px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+  grid-template-columns: auto auto auto;
+  -ms-grid-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: ". card-red ." "card-green card-red card-blue" "card-green card-yellow card-blue" ". card-yellow .";
+  column-gap: 30px;
+  row-gap: 30px; }
+  @media (max-width: 1023px) {
+    .cards-container {
+      -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: "card-green card-red" "card-yellow card-blue"; } }
+  @media (max-width: 699px) {
+    .cards-container {
+      -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      -ms-grid-rows: none;
+      grid-template-rows: none;
+      grid-template-areas: "card-green" "card-red" "card-yellow" "card-blue"; } }
+  .cards-container .card {
+    position: relative;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    background: #FFFFFF;
+    box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+    border-radius: 8px;
+    padding: 32px;
+    overflow: hidden; }
+    @media (max-width: 699px) {
+      .cards-container .card {
+        padding: 28px; } }
+    .cards-container .card:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 4px; }
+    .cards-container .card.green {
+      grid-area: card-green; }
+      .cards-container .card.green:before {
+        background: #44D3D2; }
+    .cards-container .card.red {
+      grid-area: card-red; }
+      .cards-container .card.red:before {
+        background: #EA5454; }
+    .cards-container .card.yellow {
+      grid-area: card-yellow; }
+      .cards-container .card.yellow:before {
+        background: #FCAE4A; }
+    .cards-container .card.blue {
+      grid-area: card-blue; }
+      .cards-container .card.blue:before {
+        background: #549EF2; }
+    .cards-container .card .card-title {
+      width: 100%;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      color: #4D4F62;
+      margin: 0 0 6px; }
+      @media (max-width: 699px) {
+        .cards-container .card .card-title {
+          margin-bottom: 1px; } }
+    .cards-container .card .card-text {
+      width: 100%;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 23px;
+      letter-spacing: 0.0902778px;
+      mix-blend-mode: normal;
+      opacity: 0.5;
+      margin: 0 0 40px; }
+      @media (max-width: 699px) {
+        .cards-container .card .card-text {
+          margin-bottom: 33px; } }
+    .cards-container .card .card-icon {
+      height: 64px; }
+      @media (max-width: 699px) {
+        .cards-container .card .card-icon {
+          height: 57px; } }
 
 
 
